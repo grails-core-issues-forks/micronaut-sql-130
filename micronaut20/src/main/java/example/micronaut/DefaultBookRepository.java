@@ -1,7 +1,7 @@
 package example.micronaut;
 
 import example.micronaut.entities.BookEntity;
-import io.micronaut.spring.tx.annotation.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Nonnull;
 import javax.inject.Singleton;

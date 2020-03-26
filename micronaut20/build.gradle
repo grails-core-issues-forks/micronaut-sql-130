@@ -36,6 +36,7 @@ dependencies {
     implementation "io.micronaut.configuration:micronaut-jdbc-tomcat"
     runtimeOnly "mysql:mysql-connector-java:8.0.15"
     implementation "io.micronaut:micronaut-spring"
+    implementation("org.springframework:spring-orm:5.2.0.RELEASE")
 
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"

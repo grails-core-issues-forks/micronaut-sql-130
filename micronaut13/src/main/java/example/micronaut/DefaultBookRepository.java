@@ -3,8 +3,6 @@ package example.micronaut;
 import example.micronaut.entities.BookEntity;
 import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession;
 import io.micronaut.spring.tx.annotation.Transactional;
-import org.hibernate.Session;
-
 import javax.annotation.Nonnull;
 import javax.inject.Singleton;
 import javax.persistence.EntityManager;

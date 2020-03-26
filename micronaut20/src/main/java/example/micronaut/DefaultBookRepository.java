@@ -1,7 +1,6 @@
 package example.micronaut;
 
 import example.micronaut.entities.BookEntity;
-import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession;
 import io.micronaut.spring.tx.annotation.Transactional;
 
 import javax.annotation.Nonnull;
@@ -28,7 +27,7 @@ public class DefaultBookRepository implements BookRepository {
      *
      * @param entityManager The entity manager
      */
-    public DefaultBookRepository(@CurrentSession EntityManager entityManager) {
+    public DefaultBookRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 

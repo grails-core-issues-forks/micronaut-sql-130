@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Nonnull;
 import javax.inject.Singleton;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -19,7 +18,6 @@ import javax.validation.constraints.NotNull;
 @Singleton
 public class DefaultBookRepository implements BookRepository {
 
-    @PersistenceContext
     private final EntityManager entityManager;
 
     /**

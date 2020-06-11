@@ -9,8 +9,8 @@ version "0.1"
 group "example.micronaut"
 
 repositories {
-    mavenCentral()
-    maven { url "https://jcenter.bintray.com" }
+    jcenter()
+    maven { url "https://oss.jfrog.org/oss-snapshot-local" }
 }
 
 configurations {
@@ -19,10 +19,10 @@ configurations {
 }
 
 dependencies {
-    annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    annotationProcessor enforcedPlatform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
-    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
+    implementation enforcedPlatform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "io.micronaut:micronaut-inject"
     implementation "io.micronaut:micronaut-validation"
     implementation "io.micronaut:micronaut-runtime"
@@ -31,14 +31,14 @@ dependencies {
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
 
     annotationProcessor "javax.persistence:javax.persistence-api:2.2"
-    implementation "io.micronaut.configuration:micronaut-hibernate-jpa"
-    implementation "io.micronaut.configuration:micronaut-liquibase"
-    implementation "io.micronaut.configuration:micronaut-jdbc-tomcat"
+    implementation "io.micronaut.sql:micronaut-hibernate-jpa"
+    implementation "io.micronaut.liquibase:micronaut-liquibase"
+    implementation("io.micronaut.sql:micronaut-jdbc-tomcat")
     runtimeOnly "mysql:mysql-connector-java:8.0.15"
     implementation "io.micronaut:micronaut-spring"
     implementation("org.springframework:spring-orm:5.2.0.RELEASE")
 
-    testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    testAnnotationProcessor enforcedPlatform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
 
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
